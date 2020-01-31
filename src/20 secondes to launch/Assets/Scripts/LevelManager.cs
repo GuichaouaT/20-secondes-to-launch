@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     [Header("Componants")]
     [SerializeField] private Transform conditionsParent;
+    [SerializeField] private Animation sceneAnimation;
     [SerializeField] private TextMeshPro countdownText;
 
     [Header("Settings")]
@@ -37,7 +38,7 @@ public class LevelManager : MonoBehaviour
 
     public void EVENT_Lauch()
     {
-        Lauch();
+        Launch();
     }
 
     #endregion
@@ -53,12 +54,12 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
 
-        Lauch();
+        Launch();
     }
 
     #endregion
 
-    private void Lauch()
+    private void Launch()
     {
         foreach (var cond in conditions)
             if (!cond.IsValid())
@@ -71,11 +72,12 @@ public class LevelManager : MonoBehaviour
 
     private void ExecuteFail(FailData failData)
     {
-
+        Debug.Log("Fail");
     }
 
     private void ExecuteSuccess()
     {
         Debug.Log("You WIN !!!!!");
+        sceneAnimation.Play("fuse launch");
     }
 }
