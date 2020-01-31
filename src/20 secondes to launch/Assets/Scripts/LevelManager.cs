@@ -6,12 +6,25 @@ using TMPro;
 public class LevelManager : MonoBehaviour
 {
     [Header("Componants")]
+    [SerializeField] private Transform conditionsParent;
     [SerializeField] private TextMeshPro countdownText;
 
     [Header("Settings")]
     [SerializeField] private int initialCountdown = 20;
 
+    private readonly List<Condition> conditions = new List<Condition>();
+
     #region Unity Callbacks
+
+    private void Awake()
+    {
+        foreach(Transform t in conditionsParent)
+        {
+            var cond = t.GetComponent<Condition>();
+            if (cond)
+                conditions.Add(cond);
+        }
+    }
 
     private void Start()
     {
@@ -47,7 +60,22 @@ public class LevelManager : MonoBehaviour
 
     private void Lauch()
     {
-        Debug.Log("LAUNCH !!!!!!!!");
+        foreach (var cond in conditions)
+            if (!cond.IsValid())
+            {
+                ExecuteFail(cond.FailData);
+                return;
+            }
+        ExecuteSuccess();
     }
 
+    private void ExecuteFail(FailData failData)
+    {
+
+    }
+
+    private void ExecuteSuccess()
+    {
+        Debug.Log("You WIN !!!!!");
+    }
 }
