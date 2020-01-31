@@ -73,6 +73,7 @@ public class LevelManager : MonoBehaviour
     private void ExecuteFail(FailData failData)
     {
         Debug.Log("Fail");
+        sceneAnimation.Play(failData.animation);
     }
 
     private void ExecuteSuccess()
