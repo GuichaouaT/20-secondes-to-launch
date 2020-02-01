@@ -1793,11 +1793,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thermometer
       objectReference: {fileID: 0}
-    - target: {fileID: 5705541995630487253, guid: 7534d2b6676360b489680f8382e707a2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.43
-      objectReference: {fileID: 0}
     - target: {fileID: 6806614494407715739, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1852,26 +1847,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849313248600517190, guid: 7534d2b6676360b489680f8382e707a2,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -158
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849313248600517190, guid: 7534d2b6676360b489680f8382e707a2,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.8490566
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849313248600517190, guid: 7534d2b6676360b489680f8382e707a2,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.17221431
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849313248600517190, guid: 7534d2b6676360b489680f8382e707a2,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.17221431
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
