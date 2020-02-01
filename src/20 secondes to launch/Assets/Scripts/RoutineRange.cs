@@ -10,7 +10,7 @@ public class RoutineRange : MonoBehaviour
     public float step;
     public bool useDeltaTime;
     [SerializeField] private UnityEventFloat onValue;
-    [SerializeField] private UnityEvent onEnd;
+    [SerializeField] private UnityEventBool onEnd;
 
     private bool isRunning;
     private Coroutine coroutine;
@@ -35,9 +35,9 @@ public class RoutineRange : MonoBehaviour
         }
 
         if (from < to)
-            coroutine = StartCoroutine(Routine(from, to));
+            coroutine = StartCoroutine(Routine(from, to, false));
         else
-            coroutine = StartCoroutine(RoutineReversed(from, to));
+            coroutine = StartCoroutine(RoutineReversed(from, to, false));
     }
 
     public void PlayReversed(bool forceRestart)
@@ -54,34 +54,34 @@ public class RoutineRange : MonoBehaviour
         }
 
         if (from > to)
-            coroutine = StartCoroutine(Routine(to, from));
+            coroutine = StartCoroutine(Routine(to, from, true));
         else
-            coroutine = StartCoroutine(RoutineReversed(to, from));
+            coroutine = StartCoroutine(RoutineReversed(to, from, true));
     }
 
-    private IEnumerator Routine(float min, float max)
+    private IEnumerator Routine(float min, float max, bool isReversed)
     {
         isRunning = true;
-        for (float i = min; i < max; i += step)
+        for (float i = min; i < max; i += useDeltaTime ? step * Time.deltaTime : step)
         {
             onValue.Invoke(i);
             yield return 0;
         }
         onValue.Invoke(to);
-        onEnd.Invoke();
+        onEnd.Invoke(isReversed);
         isRunning = false;
     }
 
-    private IEnumerator RoutineReversed(float max, float min)
+    private IEnumerator RoutineReversed(float max, float min, bool isReserved)
     {
         isRunning = true;
-        for (float i = max; i > min; i += step)
+        for (float i = max; i > min; i += useDeltaTime ? step * Time.deltaTime : step)
         {
             onValue.Invoke(i);
             yield return 0;
         }
         onValue.Invoke(to);
-        onEnd.Invoke();
+        onEnd.Invoke(isReserved);
         isRunning = false;
     }
 }
