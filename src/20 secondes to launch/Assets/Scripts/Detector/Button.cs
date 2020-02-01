@@ -30,4 +30,5 @@ public class Button : MonoBehaviour
         if (target)
             target.color = normalColor;
     }
+
 }
