@@ -11,6 +11,7 @@ public class Button : MonoBehaviour
     [SerializeField] private Color pressedColor = Color.gray;
 
     [SerializeField] private UnityEvent onClicked;
+    [SerializeField] private UnityEvent onUnclicked;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class Button : MonoBehaviour
             return;
         if (target)
             target.color = normalColor;
+        onUnclicked.Invoke();
     }
 
 }
