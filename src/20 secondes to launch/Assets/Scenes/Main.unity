@@ -203,6 +203,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 6a1bbcffed0bbb640a612629f16a3414, type: 2}
   - {fileID: 7400000, guid: d210c79b1ce4c5148b2939b4ff83fdac, type: 2}
+  - {fileID: 7400000, guid: d1a61452aee3ff346b74b46415044e03, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -276,6 +277,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.0561471
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426323572758798955, guid: 4801c68f4d1907a419397d62ba53b5ab,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426323572758798955, guid: 4801c68f4d1907a419397d62ba53b5ab,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426323572758798955, guid: 4801c68f4d1907a419397d62ba53b5ab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426323572758798955, guid: 4801c68f4d1907a419397d62ba53b5ab,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2999999
       objectReference: {fileID: 0}
     - target: {fileID: 2426323572847792970, guid: 4801c68f4d1907a419397d62ba53b5ab,
         type: 3}
@@ -575,6 +596,7 @@ Transform:
   m_Children:
   - {fileID: 1960794557}
   - {fileID: 1189004550}
+  - {fileID: 1848620156}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -918,7 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   failAnimation: Rocket Explose
-  value: 0
+  value: 1
   reversed: 0
 --- !u!1 &1216586233
 GameObject:
@@ -1826,6 +1848,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1848620155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1848620156}
+  - component: {fileID: 1848620157}
+  m_Layer: 0
+  m_Name: Wing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1848620156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848620155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 814267677}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1848620157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848620155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabbad2ab53ad3f4abf55980c0a275ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failAnimation: Rocket Crash
+  value: 0
+  reversed: 0
 --- !u!1001 &1921592058
 PrefabInstance:
   m_ObjectHideFlags: 0
