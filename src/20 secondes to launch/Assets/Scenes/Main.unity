@@ -202,6 +202,7 @@ Animation:
   m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400000, guid: 6a1bbcffed0bbb640a612629f16a3414, type: 2}
+  - {fileID: 7400000, guid: d210c79b1ce4c5148b2939b4ff83fdac, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -259,7 +260,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 3173279187924197496}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49a72595dd03cfe4da224ef186dd64cc, type: 3}
   m_Name: 
@@ -573,6 +574,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1960794557}
+  - {fileID: 1189004550}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -604,7 +606,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838594446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.6, y: -2.21, z: 0}
+  m_LocalPosition: {x: -7.74, y: -1.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2135308040}
@@ -872,6 +874,52 @@ Transform:
   m_Father: {fileID: 599969726}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1189004549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1189004550}
+  - component: {fileID: 1189004551}
+  m_Layer: 0
+  m_Name: Clamp Up
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1189004550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189004549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 814267677}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1189004551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189004549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabbad2ab53ad3f4abf55980c0a275ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failAnimation: Rocket Explose
+  value: 0
+  reversed: 0
 --- !u!1 &1216586233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1104,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1960794558}
-        m_MethodName: Set
+        m_MethodName: set_Value
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1330,6 +1378,7 @@ MonoBehaviour:
   countdownText: {fileID: 1834692985}
   blackScreen: {fileID: 745474374}
   startLight: {fileID: 1813477635}
+  thermometerValueIncrease: {fileID: 560551299}
   initialCountdown: 20
   successAnimationName: Rocket Launch
 --- !u!4 &1740637269
@@ -1904,8 +1953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabbad2ab53ad3f4abf55980c0a275ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failData:
-    animation: Rocket Explose
+  failAnimation: Rocket Explose
   value: 0
   reversed: 0
 --- !u!1001 &1993115155
@@ -2123,10 +2171,82 @@ PrefabInstance:
       propertyPath: onValue.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: Check
       objectReference: {fileID: 0}
+    - target: {fileID: 560551299, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
+      propertyPath: speed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 560551299, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 560551299, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
+      propertyPath: value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1740637268}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Fail
+      objectReference: {fileID: 0}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Rocket Explose
+      objectReference: {fileID: 0}
     - target: {fileID: 1975763827222243441, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
       propertyPath: m_Name
       value: Thermometer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1740637268}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Fail
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Rocket Explose
       objectReference: {fileID: 0}
     - target: {fileID: 6806614494407715739, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}

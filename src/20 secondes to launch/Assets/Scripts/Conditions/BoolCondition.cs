@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BoolCondition : Condition
 {
-    public bool value;
+    [SerializeField] private bool value;
     public bool reversed = false;
 
-    public override bool IsValid() => reversed ^ value;
+    public bool Value { get => value; set => this.value = value; }
 
-    public void Set(bool value) => this.value = value;
+    public override bool IsValid() => reversed ^ value;
 
     public void Switch() => value ^= true;
 }

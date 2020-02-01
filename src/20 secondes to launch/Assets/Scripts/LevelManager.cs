@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TextMeshPro countdownText;
     [SerializeField] private GameObject blackScreen;
     [SerializeField] private GameObject startLight;
+    [SerializeField] private ValueIncrease thermometerValueIncrease;
 
     [Header("Settings")]
     [SerializeField] private int initialCountdown = 20;
@@ -22,6 +23,7 @@ public class LevelManager : MonoBehaviour
 
     private readonly List<Condition> conditions = new List<Condition>();
     private bool isRunning = false;
+    private bool isFinish = false;
 
     #region Unity Callbacks
 
@@ -90,6 +92,15 @@ public class LevelManager : MonoBehaviour
 
     #endregion
 
+    public void Fail(string animation)
+    {
+        if (isFinish)
+            return;
+        isFinish = true;
+
+        ExecuteFail(animation);
+    }
+
     private void Restart()
     {
         isRestart = true;
@@ -101,29 +112,33 @@ public class LevelManager : MonoBehaviour
         if (isRunning)
             return;
         isRunning = true;
+
         blackScreen.SetActive(false);
         startLight.SetActive(false);
+        thermometerValueIncrease.enabled = true;
+
         StartCoroutine(Routine_Countdown());
     }
 
-
-
-
     private void Launch()
     {
+        if (isFinish)
+            return;
+        isFinish = true;
+
         foreach (var cond in conditions)
             if (!cond.IsValid())
             {
-                ExecuteFail(cond.FailData);
+                ExecuteFail(cond.FailAnimation);
                 return;
             }
         ExecuteSuccess();
     }
 
-    private void ExecuteFail(FailData failData)
+    private void ExecuteFail(string animation)
     {
         Debug.Log("Fail");
-        sceneAnimation.Play(failData.animation);
+        sceneAnimation.Play(animation);
     }
 
     private void ExecuteSuccess()
