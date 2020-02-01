@@ -42,6 +42,11 @@ public class LevelManager : MonoBehaviour
         Launch();
     }
 
+    public void EVENT_OnAnimationEnd()
+    {
+
+    }
+
     #endregion
 
 
