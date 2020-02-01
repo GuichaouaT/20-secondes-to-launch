@@ -1136,6 +1136,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isTrue:
+    m_PersistentCalls:
+      m_Calls: []
+  isFalse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1283489759 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2850185998103256885, guid: 27db1a02ab49eee469f302366e8efadb,
@@ -2185,6 +2191,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
       propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1740637268}
@@ -2208,6 +2224,36 @@ PrefabInstance:
       propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Rocket Explose
       objectReference: {fileID: 0}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1740637268}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Fail
+      objectReference: {fileID: 0}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Rocket Explose
+      objectReference: {fileID: 0}
     - target: {fileID: 1975763827222243441, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
       propertyPath: m_Name
@@ -2216,6 +2262,11 @@ PrefabInstance:
     - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
       propertyPath: result.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
@@ -2246,6 +2297,36 @@ PrefabInstance:
     - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
       propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Rocket Explose
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1740637268}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Fail
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
+        type: 3}
+      propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Rocket Explose
       objectReference: {fileID: 0}
     - target: {fileID: 6806614494407715739, guid: 7534d2b6676360b489680f8382e707a2,
