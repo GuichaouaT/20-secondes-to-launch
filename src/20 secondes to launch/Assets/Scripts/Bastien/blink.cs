@@ -5,6 +5,7 @@ using UnityEngine;
 public class blink : MonoBehaviour
 {
     private SpriteRenderer sr;
+    private Vector4 blackRed = new Vector4(65, 0, 0, 255);
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,6 @@ public class blink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sr.color = Color.red;
+
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class maskThermo : MonoBehaviour
 {
-    [Range(0.361f,3.2f)]
+    [Range(0.23f,2.0f)]
     public float posY = 0; 
     // Start is called before the first frame update
     void Start()
