@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class maskThermo : MonoBehaviour
 {
-    private Transform trMask;
-    public float posDeltaY = 0;
+    [Range(0.361f,3.2f)]
+    public float posY = 0; 
     // Start is called before the first frame update
     void Start()
     {
-        trMask = GetComponent<Transform>();
+        posY = transform.localPosition.y;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.localPosition = new Vector3(transform.localPosition.x, posDeltaY, transform.localPosition.z);
+        transform.localPosition = new Vector3(transform.localPosition.x, posY, transform.localPosition.z);
     }
 }
