@@ -27,11 +27,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        StartCoroutine(Routine_Countdown());
-    }
-
     #endregion
 
 
@@ -45,6 +40,11 @@ public class LevelManager : MonoBehaviour
     public void EVENT_OnAnimationEnd()
     {
 
+    }
+
+    public void BTN_StartGame()
+    {
+        InitGame();
     }
 
     #endregion
@@ -64,6 +64,17 @@ public class LevelManager : MonoBehaviour
     }
 
     #endregion
+
+
+
+    private void InitGame()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Routine_Countdown());
+    }
+
+
+
 
     private void Launch()
     {
