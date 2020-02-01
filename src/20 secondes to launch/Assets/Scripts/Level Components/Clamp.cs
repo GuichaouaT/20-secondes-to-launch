@@ -17,7 +17,7 @@ public class Clamp : MonoBehaviour
         if (isMoving)
             return;
 
-        if (condition.value)
+        if (condition.Value)
         {
             StartCoroutine(Routine_Close());
         }
@@ -38,14 +38,14 @@ public class Clamp : MonoBehaviour
             yield return 0;
         }
         transform.position = target;
-        condition.value = true;
+        condition.Value = true;
         isMoving = false;
     }
 
     private IEnumerator Routine_Close()
     {
         isMoving = true;
-        condition.value = false;
+        condition.Value = false;
         var target = closedPosition.position;
         while (Vector3.Distance(transform.position, target) > stopDistance)
         {

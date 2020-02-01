@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Condition : MonoBehaviour
 {
-    [SerializeField] private FailData failData;
+    [SerializeField] private string failAnimation;
 
-    public FailData FailData => failData;
+    public string FailAnimation => failAnimation;
 
     public abstract bool IsValid();
 }
