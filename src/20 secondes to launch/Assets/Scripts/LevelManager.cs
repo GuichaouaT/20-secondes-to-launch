@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,22 +11,45 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform conditionsParent;
     [SerializeField] private Animation sceneAnimation;
     [SerializeField] private TextMeshPro countdownText;
+    [SerializeField] private GameObject blackScreen;
+    [SerializeField] private GameObject startLight;
 
     [Header("Settings")]
     [SerializeField] private int initialCountdown = 20;
+    [SerializeField] private string successAnimationName;
+
+    private static bool isRestart = false;
 
     private readonly List<Condition> conditions = new List<Condition>();
+    private bool isRunning = false;
 
     #region Unity Callbacks
 
     private void Awake()
     {
-        foreach(Transform t in conditionsParent)
+        foreach (Transform t in conditionsParent)
         {
             var cond = t.GetComponent<Condition>();
             if (cond)
                 conditions.Add(cond);
         }
+    }
+
+    private void Start()
+    {
+        if (isRestart)
+        {
+            InitGame();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+            Restart();
+
+        if (Input.GetKeyDown(KeyCode.M))
+            Launch();
     }
 
     #endregion
@@ -39,7 +64,7 @@ public class LevelManager : MonoBehaviour
 
     public void EVENT_OnAnimationEnd()
     {
-
+        Debug.Log("Animation End");
     }
 
     public void BTN_StartGame()
@@ -65,11 +90,19 @@ public class LevelManager : MonoBehaviour
 
     #endregion
 
-
+    private void Restart()
+    {
+        isRestart = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     private void InitGame()
     {
-        StopAllCoroutines();
+        if (isRunning)
+            return;
+        isRunning = true;
+        blackScreen.SetActive(false);
+        startLight.SetActive(false);
         StartCoroutine(Routine_Countdown());
     }
 
@@ -96,6 +129,13 @@ public class LevelManager : MonoBehaviour
     private void ExecuteSuccess()
     {
         Debug.Log("You WIN !!!!!");
-        sceneAnimation.Play("fuse launch");
+        try
+        {
+            sceneAnimation.Play(successAnimationName);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
     }
 }
