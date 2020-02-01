@@ -14,17 +14,20 @@ public class Button : MonoBehaviour
 
     private void Start()
     {
-        target.color = normalColor;
+        if (target)
+            target.color = normalColor;
     }
 
     private void OnMouseDown()
     {
-        target.color = pressedColor;
+        if (target)
+            target.color = pressedColor;
         onClicked.Invoke();
     }
 
     private void OnMouseUp()
     {
-        target.color = normalColor;
+        if (target)
+            target.color = normalColor;
     }
 }
