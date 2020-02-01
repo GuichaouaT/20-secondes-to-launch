@@ -7,13 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] private MonoBehaviour[] componentToActivateOnInit;
+    [SerializeField] private GameObject[] gameobjectToActivateOnInit;
+
     [Header("Componants")]
     [SerializeField] private Transform conditionsParent;
     [SerializeField] private Animation sceneAnimation;
     [SerializeField] private TextMeshPro countdownText;
     [SerializeField] private GameObject blackScreen;
     [SerializeField] private GameObject startLight;
-    [SerializeField] private ValueIncrease thermometerValueIncrease;
 
     [Header("Settings")]
     [SerializeField] private int initialCountdown = 20;
@@ -113,9 +115,14 @@ public class LevelManager : MonoBehaviour
             return;
         isRunning = true;
 
+        foreach (var go in gameobjectToActivateOnInit)
+            go.SetActive(true);
+
+        foreach (var comp in componentToActivateOnInit)
+            comp.enabled = true;
+
         blackScreen.SetActive(false);
-        startLight.SetActive(false);
-        thermometerValueIncrease.enabled = true;
+        startLight.SetActive(false);    
 
         StartCoroutine(Routine_Countdown());
     }

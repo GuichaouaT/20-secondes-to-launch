@@ -14,8 +14,6 @@ public class light : MonoBehaviour
     private void Start()
     {
         if (target)
-        {
-            target.color = Color.grey;
-        }
+            target.color = colorOff;
     }
 }

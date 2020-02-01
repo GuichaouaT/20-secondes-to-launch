@@ -20,6 +20,8 @@ public class Button : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!enabled)
+            return;
         if (target)
             target.color = pressedColor;
         onClicked.Invoke();
@@ -27,6 +29,8 @@ public class Button : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (!enabled)
+            return;
         if (target)
             target.color = normalColor;
     }
