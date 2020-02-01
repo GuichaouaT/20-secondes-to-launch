@@ -7,11 +7,11 @@ public class DragValue : MonoBehaviour
     public float value;
     public float min;
     public float max;
-    public float deltaBydDistance;
+    public float deltaByDistance;
 
     [SerializeField] private UnityEventFloat onValue;
 
-    private Vector3 lastMousePos;
+    private float lastMousePos;
 
     private void OnValidate()
     {
@@ -21,15 +21,15 @@ public class DragValue : MonoBehaviour
 
     private void OnMouseDown()
     {
-        lastMousePos = Input.mousePosition;
+        lastMousePos = Input.mousePosition.x;
     }
 
     private void OnMouseDrag()
     {
-        var diff = Vector3.Distance(Input.mousePosition, lastMousePos);
-        value += diff * deltaBydDistance;
+        var diff = Input.mousePosition.x - lastMousePos;
+        value += diff * deltaByDistance;
         value = Mathf.Clamp(value, min, max);
-        lastMousePos = Input.mousePosition;
+        lastMousePos = Input.mousePosition.x;
         onValue.Invoke(value);
     }
 }
