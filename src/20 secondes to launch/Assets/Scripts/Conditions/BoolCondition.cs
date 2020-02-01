@@ -7,5 +7,9 @@ public class BoolCondition : Condition
     public bool value;
     public bool reversed = false;
 
-    public override bool IsValid() => reversed ? value : !value;
+    public override bool IsValid() => reversed ^ value;
+
+    public void Set(bool value) => this.value = value;
+
+    public void Switch() => value ^= true;
 }

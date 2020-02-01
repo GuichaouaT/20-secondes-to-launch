@@ -10,3 +10,6 @@ public class UnityEventInt : UnityEvent<int> { }
 
 [Serializable]
 public class UnityEventFloat : UnityEvent<float> { }
+
+[Serializable]
+public class UnityEventBool : UnityEvent<bool> { }
