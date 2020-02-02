@@ -4440,9 +4440,6 @@ MonoBehaviour:
   - {fileID: 3993632959101286822}
   - {fileID: 1742959494}
   - {fileID: 1949698087}
-  - {fileID: 1061547848}
-  - {fileID: 1486778324}
-  - {fileID: 838851669}
   gameobjectToActivateOnInit: []
   conditionsParent: {fileID: 814267677}
   sceneAnimation: {fileID: 277213330}
@@ -5531,12 +5528,12 @@ PrefabInstance:
     - target: {fileID: 7343549275802439373, guid: 27db1a02ab49eee469f302366e8efadb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.29
+      value: -5.82
       objectReference: {fileID: 0}
     - target: {fileID: 7343549275802439373, guid: 27db1a02ab49eee469f302366e8efadb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.38
+      value: 2.62
       objectReference: {fileID: 0}
     - target: {fileID: 7343549275802439373, guid: 27db1a02ab49eee469f302366e8efadb,
         type: 3}
@@ -5638,7 +5635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointer: {fileID: 1295693615}
   pos: 0
-  speed: 0.0025
+  speed: 0.002
 --- !u!212 &1944781018
 SpriteRenderer:
   m_ObjectHideFlags: 0
