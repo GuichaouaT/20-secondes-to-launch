@@ -356,6 +356,12 @@ SpriteRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 599969725}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &217209029 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8849313248600517190, guid: 7534d2b6676360b489680f8382e707a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 3173279187924197496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &222977899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,7 +1969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838594446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.88, y: -4.19, z: 0}
+  m_LocalPosition: {x: -4.24, y: -2.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2135308040}
@@ -2873,11 +2879,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964346804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.41, y: -3.34, z: 0}
+  m_LocalPosition: {x: -6.74, y: -3.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 123872082}
   - {fileID: 1916325422}
+  - {fileID: 1409872378}
   m_Father: {fileID: 2135308040}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3804,8 +3811,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1216750442}
-  colorOn: {r: 1, g: 1, b: 1, a: 1}
-  colorOff: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  colorOn: {r: 0, g: 1, b: 0, a: 1}
+  colorOff: {r: 1, g: 0, b: 0, a: 1}
   sensorSound: {fileID: 8300000, guid: 8c001c83abaa08b42a3c1c6f8e450650, type: 3}
 --- !u!212 &1216750442
 SpriteRenderer:
@@ -4400,13 +4407,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409872377}
-  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -3.46, y: -1.3699999, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
+  m_LocalPosition: {x: -0.049999952, y: 1.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 717291725}
-  m_Father: {fileID: 2135308040}
-  m_RootOrder: 15
+  m_Father: {fileID: 964346805}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!212 &1409872379
 SpriteRenderer:
@@ -5375,6 +5382,100 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1548611993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548611994}
+  - component: {fileID: 1548611996}
+  - component: {fileID: 1548611995}
+  m_Layer: 0
+  m_Name: Blink
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1548611994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548611993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3173279187924197497}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1548611995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548611993}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270d464fa5e0fe946b6249816ad51db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  delay: 0.1
+  onValue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 217209029}
+        m_MethodName: set_enabled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1548611996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548611993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796137e0fed452b4eacfeb6d078b0448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  min: 0.8
+  max: 1
+  result:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1548611995}
+        m_MethodName: set_enabled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isTrue:
+    m_PersistentCalls:
+      m_Calls: []
+  isFalse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1622911774
 GameObject:
   m_ObjectHideFlags: 0
@@ -7670,7 +7771,6 @@ Transform:
   - {fileID: 1061547847}
   - {fileID: 1486778322}
   - {fileID: 1216750439}
-  - {fileID: 1409872378}
   m_Father: {fileID: 277213329}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7681,6 +7781,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 277213329}
     m_Modifications:
+    - target: {fileID: 560551299, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
+      propertyPath: onValue.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 560551299, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
       propertyPath: onValue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -7712,6 +7816,26 @@ PrefabInstance:
     - target: {fileID: 560551299, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
       propertyPath: max
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 560551299, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
+      propertyPath: onValue.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 560551299, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
+      propertyPath: onValue.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 560551299, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
+      propertyPath: onValue.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1548611996}
+    - target: {fileID: 560551299, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
+      propertyPath: onValue.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Check
+      objectReference: {fileID: 0}
+    - target: {fileID: 560551299, guid: 7534d2b6676360b489680f8382e707a2, type: 3}
+      propertyPath: onValue.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 182609477076012776, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
@@ -7861,12 +7985,12 @@ PrefabInstance:
     - target: {fileID: 6806614494407715739, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.86
+      value: -3.15
       objectReference: {fileID: 0}
     - target: {fileID: 6806614494407715739, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.43
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 6806614494407715739, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
@@ -8243,8 +8367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 7563529338295444888}
-  colorOn: {r: 1, g: 1, b: 1, a: 1}
-  colorOff: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  colorOn: {r: 0, g: 1, b: 0, a: 1}
+  colorOff: {r: 1, g: 0, b: 0, a: 1}
   sensorSound: {fileID: 8300000, guid: 8c001c83abaa08b42a3c1c6f8e450650, type: 3}
 --- !u!212 &7563529338295444888
 SpriteRenderer:
@@ -8286,7 +8410,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d450f96685cec3a479bbb6cc42b5581b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.00126791, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
