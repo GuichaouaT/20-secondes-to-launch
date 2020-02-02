@@ -17,7 +17,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Animation sceneAnimation;
     [SerializeField] private TextMeshPro countdownText;
     [SerializeField] private GameObject blackScreen;
-    [SerializeField] private GameObject startLight;
     [SerializeField] private SpriteRenderer flashSpriteRenderer;
 
     [Header("Settings")]
@@ -160,7 +159,6 @@ public class LevelManager : MonoBehaviour
         EnableButton(true);
 
         blackScreen.SetActive(false);
-        startLight.SetActive(false);
 
         StartCoroutine(Routine_Countdown());
     }
