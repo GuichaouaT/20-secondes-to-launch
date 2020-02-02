@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TextMeshPro countdownText;
     [SerializeField] private GameObject blackScreen;
     [SerializeField] private GameObject startLight;
-    [SerializeField] private GameObject flashGameObject;
+    [SerializeField] private SpriteRenderer flashSpriteRenderer;
 
     [Header("Settings")]
     [SerializeField] private int initialCountdown = 20;
@@ -109,8 +109,13 @@ public class LevelManager : MonoBehaviour
     {
         isRestart = true;
         EnableButton(false);
-        flashGameObject.SetActive(true);
-        yield return new WaitForSeconds(flashDuration);
+
+        flashSpriteRenderer.gameObject.SetActive(true);
+        for (float a = 0; a <= flashDuration; a += Time.deltaTime)
+        {
+            flashSpriteRenderer.color = new Color(1, 1, 1, Mathf.InverseLerp(0, flashDuration, a));
+            yield return 0;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -138,8 +143,7 @@ public class LevelManager : MonoBehaviour
 
     private void Restart()
     {
-        isRestart = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(Routine_Restart());
     }
 
     private void Win()
