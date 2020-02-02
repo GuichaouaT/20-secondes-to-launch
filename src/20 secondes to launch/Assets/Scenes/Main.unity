@@ -263,6 +263,7 @@ Animation:
   - {fileID: 7400000, guid: 6a1bbcffed0bbb640a612629f16a3414, type: 2}
   - {fileID: 7400000, guid: d210c79b1ce4c5148b2939b4ff83fdac, type: 2}
   - {fileID: 7400000, guid: d1a61452aee3ff346b74b46415044e03, type: 2}
+  - {fileID: 7400000, guid: e5af2d23b6943a846a59e3a2f6fb10b9, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -477,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 950097928, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.27
+      value: 1.95
       objectReference: {fileID: 0}
     - target: {fileID: 950097929, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
       propertyPath: m_Sprite
@@ -817,10 +818,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 885057993}
   - {fileID: 1960794557}
   - {fileID: 1189004550}
   - {fileID: 1848620156}
-  - {fileID: 885057993}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1466,7 +1467,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 814267677}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &885057994
 MonoBehaviour:
@@ -1480,7 +1481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabbad2ab53ad3f4abf55980c0a275ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failAnimation: 
+  failAnimation: Rocket Fail Engine
   value: 0
   reversed: 0
 --- !u!1 &964346804
@@ -1970,7 +1971,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 814267677}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1189004551
 MonoBehaviour:
@@ -4573,7 +4574,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 814267677}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1848620157
 MonoBehaviour:
@@ -5348,7 +5349,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 814267677}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1960794558
 MonoBehaviour:
@@ -5691,7 +5692,7 @@ PrefabInstance:
     - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
       propertyPath: isTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Rocket Explose
+      value: Rocket Fail Engine
       objectReference: {fileID: 0}
     - target: {fileID: 4513960318816046194, guid: 7534d2b6676360b489680f8382e707a2,
         type: 3}
