@@ -12,8 +12,12 @@ public class DragValue : MonoBehaviour
     public bool resetOnRelease = false;
     public float resetValue = 0;
 
+    [SerializeField] private bool isInteractable;
+
     [SerializeField] private UnityEventFloat onValue;
 #pragma warning restore CS0649
+
+    public bool IsInteractable { get => isInteractable; set => isInteractable = value; }
 
     private float lastMousePos;
 
@@ -25,17 +29,23 @@ public class DragValue : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!IsInteractable)
+            return;
         lastMousePos = Input.mousePosition.x;
     }
 
     private void OnMouseUp()
     {
+        if (!IsInteractable)
+            return;
         if (resetOnRelease)
             SetValue(resetValue);
     }
 
     private void OnMouseDrag()
     {
+        if (!IsInteractable)
+            return;
         var diff = Input.mousePosition.x - lastMousePos;
         value += diff * deltaByDistance;
         lastMousePos = Input.mousePosition.x;

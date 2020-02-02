@@ -8,9 +8,9 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
 #pragma warning disable CS0649
+    [SerializeField] private DragValue thatFuckingLever; // don't judge me
     [SerializeField] private MonoBehaviour[] componentToActivateOnInit;
     [SerializeField] private Button[] buttons;
-    [SerializeField] private GameObject[] gameobjectToActivateOnInit;
 
     [Header("Componants")]
     [SerializeField] private Transform conditionsParent;
@@ -18,10 +18,13 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TextMeshPro countdownText;
     [SerializeField] private GameObject blackScreen;
     [SerializeField] private GameObject startLight;
+    [SerializeField] private GameObject flashGameObject;
 
     [Header("Settings")]
     [SerializeField] private int initialCountdown = 20;
     [SerializeField] private string successAnimationName;
+    [SerializeField] private float flashDuration = 1;
+
 #pragma warning restore CS0649
 
     private static bool isRestart = false;
@@ -29,6 +32,8 @@ public class LevelManager : MonoBehaviour
     private readonly List<Condition> conditions = new List<Condition>();
     private bool isRunning = false;
     private bool isFinish = false;
+    private bool isPlayingAnimation = false;
+    private bool isWin = false;
 
     #region Unity Callbacks
 
@@ -48,15 +53,16 @@ public class LevelManager : MonoBehaviour
         {
             InitGame();
         }
+        else
+        {
+            EnableButton(false);
+        }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && !isPlayingAnimation)
             Restart();
-
-        if (Input.GetKeyDown(KeyCode.M))
-            Launch();
     }
 
     #endregion
@@ -71,7 +77,10 @@ public class LevelManager : MonoBehaviour
 
     public void EVENT_OnAnimationEnd()
     {
-        Debug.Log("Animation End");
+        if (!isWin)
+            Restart();
+        else
+            Win();
     }
 
     public void BTN_StartGame()
@@ -95,7 +104,28 @@ public class LevelManager : MonoBehaviour
         Launch();
     }
 
+
+    private IEnumerator Routine_Restart()
+    {
+        isRestart = true;
+        EnableButton(false);
+        flashGameObject.SetActive(true);
+        yield return new WaitForSeconds(flashDuration);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
     #endregion
+
+    private void EnableButton(bool value)
+    {
+        foreach (var btn in buttons)
+            btn.IsInteractable = value;
+        thatFuckingLever.IsInteractable = value;
+
+        foreach (var comp in componentToActivateOnInit)
+            comp.enabled = value;
+    }
 
     public void Fail(string animation)
     {
@@ -112,23 +142,21 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    private void Win()
+    {
+        Debug.Log("WIN");
+    }
+
     private void InitGame()
     {
         if (isRunning)
             return;
         isRunning = true;
 
-        foreach (var go in gameobjectToActivateOnInit)
-            go.SetActive(true);
-
-        foreach (var btn in buttons)
-            btn.IsInteractable = true;
-
-        foreach (var comp in componentToActivateOnInit)
-            comp.enabled = true;
+        EnableButton(true);
 
         blackScreen.SetActive(false);
-        startLight.SetActive(false);    
+        startLight.SetActive(false);
 
         StartCoroutine(Routine_Countdown());
     }
@@ -150,20 +178,15 @@ public class LevelManager : MonoBehaviour
 
     private void ExecuteFail(string animation)
     {
-        Debug.Log("Fail");
+        EnableButton(false);
+        isPlayingAnimation = true;
         sceneAnimation.Play(animation);
     }
 
     private void ExecuteSuccess()
     {
-        Debug.Log("You WIN !!!!!");
-        try
-        {
-            sceneAnimation.Play(successAnimationName);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError(e);
-        }
+        EnableButton(false);
+        isPlayingAnimation = true;
+        sceneAnimation.Play(successAnimationName);
     }
 }
