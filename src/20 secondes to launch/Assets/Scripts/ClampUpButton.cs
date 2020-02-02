@@ -5,9 +5,11 @@ using UnityEngine.Events;
 
 public class ClampUpButton : MonoBehaviour
 {
+#pragma warning disable CS0649
     [SerializeField] private float timeBeforeReset;
     [SerializeField] private int clickNeeded;
     [SerializeField] private UnityEvent onValidate;
+#pragma warning restore CS0649
 
     private int clickCount;
     private float lastClickTime;

@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Valve : MonoBehaviour
 {
+#pragma warning disable CS0649
     public float value;
     public float rotationCount;
 
     [SerializeField] private UnityEventFloat onValueChanged;
+
+#pragma warning restore CS0649
 
     private bool isDragged = false;
     private float lastAngle;

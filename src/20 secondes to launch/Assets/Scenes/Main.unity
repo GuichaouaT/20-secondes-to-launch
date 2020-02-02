@@ -1124,6 +1124,7 @@ Transform:
   - {fileID: 1960794557}
   - {fileID: 1189004550}
   - {fileID: 1848620156}
+  - {fileID: 885057993}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1202,6 +1203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 838594451}
+  isInteractable: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onClicked:
@@ -1419,7 +1421,7 @@ GameObject:
   - component: {fileID: 838851670}
   - component: {fileID: 838851671}
   m_Layer: 0
-  m_Name: GazoleButton
+  m_Name: Gazole Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1502,28 +1504,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 838851668}
+  isInteractable: 0
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1944781017}
-        m_MethodName: SetPos
-        m_Mode: 6
+      - m_Target: {fileID: 1944781021}
+        m_MethodName: set_Speed
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0.01
+          m_FloatArgument: -100
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
   onUnclicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1944781017}
-        m_MethodName: SetPos
-        m_Mode: 6
+      - m_Target: {fileID: 1944781021}
+        m_MethodName: set_Speed
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1738,6 +1741,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &885057992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885057993}
+  - component: {fileID: 885057994}
+  m_Layer: 0
+  m_Name: Gazole
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &885057993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885057992}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 814267677}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &885057994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885057992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabbad2ab53ad3f4abf55980c0a275ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failAnimation: 
+  value: 0
+  reversed: 0
 --- !u!4 &898435197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2426323572758798955, guid: 4801c68f4d1907a419397d62ba53b5ab,
@@ -2087,6 +2136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1061547846}
+  isInteractable: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onClicked:
@@ -2115,8 +2165,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1486778327}
-        m_MethodName: eventOk
-        m_Mode: 1
+        m_MethodName: set_Active
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2125,8 +2175,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1061547848}
+        m_MethodName: set_IsInteractable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1061547851}
-        m_MethodName: clickSecond
+        m_MethodName: Do
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2134,7 +2195,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
   onUnclicked:
     m_PersistentCalls:
@@ -2274,8 +2335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d1f04c109495b46906743e67601982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventAvailable: 0
-  onClickedSecond:
+  active: 0
+  onAction:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1216750441}
@@ -2289,8 +2350,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1944781017}
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 838851669}
+        m_MethodName: set_IsInteractable
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2894,6 +2955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1295693615}
   - component: {fileID: 1295693616}
+  - component: {fileID: 1295693617}
   m_Layer: 0
   m_Name: compteur_aiguille
   m_TagString: Untagged
@@ -2908,13 +2970,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295693614}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0, z: -0.9975458, w: -0.070017606}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1944781019}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -188.03}
 --- !u!212 &1295693616
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2965,6 +3027,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1295693617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295693614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd28af18bc363404e8d8de1ee4029c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1328370917
 GameObject:
   m_ObjectHideFlags: 0
@@ -3383,6 +3457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1427941765}
+  isInteractable: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onClicked:
@@ -3649,6 +3724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1486778325}
+  isInteractable: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onClicked:
@@ -3677,8 +3753,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1061547851}
-        m_MethodName: eventOk
-        m_Mode: 1
+        m_MethodName: set_Active
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3687,8 +3763,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1486778324}
+        m_MethodName: set_IsInteractable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1486778327}
-        m_MethodName: clickSecond
+        m_MethodName: Do
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3696,7 +3783,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
   onUnclicked:
     m_PersistentCalls:
@@ -3860,8 +3947,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d1f04c109495b46906743e67601982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventAvailable: 0
-  onClickedSecond:
+  active: 0
+  onAction:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1216750441}
@@ -3875,8 +3962,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1944781017}
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 1486778324}
+        m_MethodName: set_IsInteractable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 838851669}
+        m_MethodName: set_IsInteractable
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4011,12 +4109,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622911774}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1930a9af2b1800843b16e47f212679a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1622911778}
+  isInteractable: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onClicked:
@@ -4436,10 +4535,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   componentToActivateOnInit:
   - {fileID: 560551299}
+  buttons:
   - {fileID: 838594449}
-  - {fileID: 3993632959101286822}
-  - {fileID: 1742959494}
-  - {fileID: 1949698087}
   gameobjectToActivateOnInit: []
   conditionsParent: {fileID: 814267677}
   sceneAnimation: {fileID: 277213330}
@@ -4527,12 +4624,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742959491}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1930a9af2b1800843b16e47f212679a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  isInteractable: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onClicked:
@@ -4693,6 +4791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  isInteractable: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onClicked:
@@ -5520,6 +5619,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 277213329}
     m_Modifications:
+    - target: {fileID: 2850185998103256885, guid: 27db1a02ab49eee469f302366e8efadb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7343549275802439371, guid: 27db1a02ab49eee469f302366e8efadb,
         type: 3}
       propertyPath: m_Name
@@ -5595,6 +5699,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 8449703748721614144, guid: 27db1a02ab49eee469f302366e8efadb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27db1a02ab49eee469f302366e8efadb, type: 3}
 --- !u!4 &1921592059 stripped
@@ -5613,29 +5722,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1944781019}
   - component: {fileID: 1944781018}
-  - component: {fileID: 1944781017}
+  - component: {fileID: 1944781021}
+  - component: {fileID: 1944781020}
   m_Layer: 0
-  m_Name: compteur_fg
+  m_Name: Gazole Gauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1944781017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944781016}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e5ec40cdeaabc140a0845beffb4a63d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointer: {fileID: 1295693615}
-  pos: 0
-  speed: 0.002
 --- !u!212 &1944781018
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5702,6 +5797,81 @@ Transform:
   m_Father: {fileID: 277213329}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1944781020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944781016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796137e0fed452b4eacfeb6d078b0448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  min: -180
+  max: -180
+  result:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 885057994}
+        m_MethodName: set_Value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isTrue:
+    m_PersistentCalls:
+      m_Calls: []
+  isFalse:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1944781021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944781016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a72595dd03cfe4da224ef186dd64cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
+  min: -180
+  max: 0
+  speed: -0.19
+  onValue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1295693617}
+        m_MethodName: Rotate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1944781020}
+        m_MethodName: Check
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1949698085
 GameObject:
   m_ObjectHideFlags: 0
@@ -5745,12 +5915,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949698085}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1930a9af2b1800843b16e47f212679a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1949698089}
+  isInteractable: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onClicked:
@@ -6646,12 +6817,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3993632959101286823}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1930a9af2b1800843b16e47f212679a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 3993632959101286825}
+  isInteractable: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onClicked:

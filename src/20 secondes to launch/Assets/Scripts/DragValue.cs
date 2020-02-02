@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DragValue : MonoBehaviour
 {
- 
+#pragma warning disable CS0649    
     public float value;
     public float min;
     public float max;
@@ -13,6 +13,7 @@ public class DragValue : MonoBehaviour
     public float resetValue = 0;
 
     [SerializeField] private UnityEventFloat onValue;
+#pragma warning restore CS0649
 
     private float lastMousePos;
 

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Countdown : MonoBehaviour
 {
+#pragma warning disable CS0649
     public int from;
     public int to;
     public float delay;
     [SerializeField] private UnityEventFloat onValue;
+#pragma warning restore CS0649
 
     private IEnumerator Routine()
     {

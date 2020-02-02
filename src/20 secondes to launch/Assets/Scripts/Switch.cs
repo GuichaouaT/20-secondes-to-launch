@@ -6,10 +6,12 @@ using UnityEngine.Events;
 public class Switch : MonoBehaviour
 {
 
+#pragma warning disable CS0649
     public bool value;
     [SerializeField] private UnityEventBool onValue;
     [SerializeField] private UnityEvent isTrue;
     [SerializeField] private UnityEvent isFalse;
+#pragma warning restore CS0649
 
     public void Do()
     {

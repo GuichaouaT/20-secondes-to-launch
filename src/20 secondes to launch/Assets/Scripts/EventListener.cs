@@ -5,8 +5,10 @@ using UnityEngine.Events;
 
 public class EventListener : MonoBehaviour
 {
+#pragma warning disable CS0649
     [SerializeField] private EventTrigger[] triggers;
     [SerializeField] private UnityEvent onTriggered;
+#pragma warning restore CS0649
 
     private void OnEnable()
     {

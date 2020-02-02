@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ValueIncrease : MonoBehaviour
 {
+#pragma warning disable CS0649
     public float value;
     public float min;
     public float max;
     public float speed;
     [SerializeField] private UnityEventFloat onValue;
+#pragma warning restore CS0649
 
     public float Speed { get => speed; set => speed = value; }
 

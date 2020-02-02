@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class light : MonoBehaviour
+public class LED : MonoBehaviour
 {
+#pragma warning disable CS0649
     [SerializeField] private SpriteRenderer target;
     [Header("Sprites")]
     [SerializeField] private Color colorOn = Color.white;
@@ -13,6 +14,8 @@ public class light : MonoBehaviour
     public AudioClip sensorSound;
     private AudioSource source;
     private bool once = false;
+#pragma warning restore CS0649
+
     public bool LightOn { set => target.color = value ? colorOn : colorOff; }
 
     private void Start()

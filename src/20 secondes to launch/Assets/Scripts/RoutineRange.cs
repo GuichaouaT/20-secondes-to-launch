@@ -5,12 +5,14 @@ using UnityEngine.Events;
 
 public class RoutineRange : MonoBehaviour
 {
+#pragma warning disable CS0649
     public float from;
     public float to;
     public float step;
     public bool useDeltaTime;
     [SerializeField] private UnityEventFloat onValue;
     [SerializeField] private UnityEventBool onEnd;
+#pragma warning restore CS0649
 
     private bool isRunning;
     private Coroutine coroutine;

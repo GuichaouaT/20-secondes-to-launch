@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class blink : MonoBehaviour
+public class Blink : MonoBehaviour
 {
     private SpriteRenderer sr;
     private Vector4 blackRed = new Vector4(65, 0, 0, 255);

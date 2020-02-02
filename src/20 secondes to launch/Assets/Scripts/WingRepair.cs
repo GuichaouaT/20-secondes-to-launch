@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class WingRepair : MonoBehaviour
 {
-
+#pragma warning disable CS0649
     [SerializeField] private GameObject wingAloneObject;
     [SerializeField] private new Animation animation;
     [Header("Animation Name")]
@@ -13,6 +13,7 @@ public class WingRepair : MonoBehaviour
     [SerializeField] private string noWingAnimationName;
     [Header("Event")]
     [SerializeField] private UnityEvent onWingRepaired;
+#pragma warning restore CS0649
 
     #region EVENT LISTENER
 

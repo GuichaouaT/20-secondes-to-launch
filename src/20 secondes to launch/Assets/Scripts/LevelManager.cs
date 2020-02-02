@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+#pragma warning disable CS0649
     [SerializeField] private MonoBehaviour[] componentToActivateOnInit;
+    [SerializeField] private Button[] buttons;
     [SerializeField] private GameObject[] gameobjectToActivateOnInit;
 
     [Header("Componants")]
@@ -20,6 +22,7 @@ public class LevelManager : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int initialCountdown = 20;
     [SerializeField] private string successAnimationName;
+#pragma warning restore CS0649
 
     private static bool isRestart = false;
 
@@ -117,6 +120,9 @@ public class LevelManager : MonoBehaviour
 
         foreach (var go in gameobjectToActivateOnInit)
             go.SetActive(true);
+
+        foreach (var btn in buttons)
+            btn.IsInteractable = true;
 
         foreach (var comp in componentToActivateOnInit)
             comp.enabled = true;
