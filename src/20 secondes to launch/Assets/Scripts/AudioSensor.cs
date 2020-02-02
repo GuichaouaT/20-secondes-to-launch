@@ -12,10 +12,4 @@ public class AudioSensor : MonoBehaviour
         source = GetComponent<AudioSource>();
         source.PlayOneShot(sensorSound, 1.0f);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
