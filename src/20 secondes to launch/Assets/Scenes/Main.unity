@@ -202,6 +202,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &200350378 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 950097929, guid: 4801c68f4d1907a419397d62ba53b5ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 599969725}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &277213328
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +467,27 @@ PrefabInstance:
       propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1622911776}
+    - target: {fileID: 702433700, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: result.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_IsInteractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 950097928, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 950097928, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 950097929, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3e3ae421df700c34a84361c5548bccad,
+        type: 3}
+    - target: {fileID: 950097929, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1328370919, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
       propertyPath: onWingRepaired.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -473,6 +500,42 @@ PrefabInstance:
       propertyPath: onWingRepaired.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
       objectReference: {fileID: 1848620157}
+    - target: {fileID: 1328370919, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: noWingAnimationName
+      value: Cannot Repair Wing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328370920, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328370920, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_Animations.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: 2848dbe87205efe429b76dd37bf2b8e9, type: 2}
+    - target: {fileID: 1639194245, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639194247, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639194247, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_Animations.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: 4c4cd6f2fc943244da8bde61db6ef1d2, type: 2}
+    - target: {fileID: 1713350679, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713350679, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713350679, guid: 4801c68f4d1907a419397d62ba53b5ab, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2426323573197980138, guid: 4801c68f4d1907a419397d62ba53b5ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3271,7 +3334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1622911778}
-  isInteractable: 1
+  isInteractable: 0
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   onClicked:
@@ -3294,6 +3357,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 200350378}
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 58318de76d7b6bb488cb500015371483,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3611,7 +3686,6 @@ MonoBehaviour:
   - {fileID: 3993632959101286822}
   - {fileID: 1742959494}
   - {fileID: 1949698087}
-  - {fileID: 1622911776}
   - {fileID: 1427941763}
   - {fileID: 1061547848}
   - {fileID: 1486778324}
@@ -4940,6 +5014,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1639194247}
+        m_MethodName: Blend
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Stick Shake
           m_BoolArgument: 0
         m_CallState: 2
   onUnclicked:
