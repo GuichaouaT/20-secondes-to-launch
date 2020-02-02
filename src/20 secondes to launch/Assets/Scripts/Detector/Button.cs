@@ -12,11 +12,15 @@ public class Button : MonoBehaviour
 
     [SerializeField] private UnityEvent onClicked;
     [SerializeField] private UnityEvent onUnclicked;
+    private AudioSource source;
+    [Header("Sound")]
+    public AudioClip buttonSound;
 
     private void Start()
     {
         if (target)
             target.color = normalColor;
+        source = GetComponent<AudioSource>();
     }
 
     private void OnMouseDown()
@@ -26,6 +30,7 @@ public class Button : MonoBehaviour
         if (target)
             target.color = pressedColor;
         onClicked.Invoke();
+        source.PlayOneShot(buttonSound, 5.0f);
     }
 
     private void OnMouseUp()
