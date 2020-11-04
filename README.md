@@ -1,4 +1,4 @@
-![bannier](https://github.com/tguichaoua/20-secondes-to-launch/blob/master/press/Screenshot.png?raw=true)
+![bannier](https://github.com/tguichaoua/20-seconds-to-launch/blob/master/press/Screenshot.png?raw=true)
 
 # 20 Secondes To Launch
 > [Global Game Jam 2020](https://globalgamejam.org/2020/games/20-seconds-launch-4)
