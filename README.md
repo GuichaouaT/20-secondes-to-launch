@@ -1,6 +1,6 @@
 ![bannier](https://github.com/tguichaoua/20-seconds-to-launch/blob/master/press/Screenshot.png?raw=true)
 
-# 20 Secondes To Launch
+# 20 Seconds To Launch
 > [Global Game Jam 2020](https://globalgamejam.org/2020/games/20-seconds-launch-4)
 
 [<img src="https://img.shields.io/badge/-PLAY-339933?style=for-the-badge&logoColor=white" />](http://tguichaoua.github.io/20-seconds-to-launch)
